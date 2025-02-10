@@ -63,6 +63,7 @@ class LoginActivity : AppCompatActivity() {
             email == validEmail && password == validPassword -> {
                 // Successful login
                 showToast("Login Successful!")
+                finish()
                 startActivity(Intent(this@LoginActivity, MainActivity::class.java))
             }
             else -> {
