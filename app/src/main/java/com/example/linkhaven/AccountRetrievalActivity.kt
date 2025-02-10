@@ -23,8 +23,14 @@ class AccountRetrievalActivity : AppCompatActivity() {
         // Initialize and access the value of email
         etEmail = findViewById(R.id.etEmail)
 
-        binding.btnSubmit.setOnClickListener {
-            retrieveAccount()
+        binding.apply {
+            btnSubmit.setOnClickListener() {
+                retrieveAccount()
+            }
+
+            btnBack.setOnClickListener() {
+                startActivity(Intent(this@AccountRetrievalActivity, WelcomeActivity::class.java))
+            }
         }
     }
 

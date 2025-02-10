@@ -2,6 +2,7 @@ package com.example.linkhaven
 
 import android.content.Intent
 import android.os.Bundle
+import android.provider.ContactsContract.CommonDataKinds.Email
 import android.text.TextUtils
 import android.util.Patterns
 import android.widget.Button
@@ -11,10 +12,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.linkhaven.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityLoginBinding
 
     //Creating of the variables
-    private lateinit var etUsername: EditText
+    private lateinit var etEmail: EditText
     private lateinit var etPassword: EditText
     private lateinit var btnLogin: Button
     private lateinit var btnBack: Button
@@ -27,7 +29,7 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        etUsername = findViewById(R.id.etUsername)
+        etEmail = findViewById(R.id.etEmail)
         etPassword = findViewById(R.id.etPassword)
         btnLogin = findViewById(R.id.btnLogin)
         btnBack= findViewById(R.id.btnBack)
@@ -44,7 +46,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun loginUser() {
-        val email = etUsername.text.toString().trim()
+        val email = etEmail.text.toString().trim()
         val password = etPassword.text.toString().trim()
 
         // Input validation
@@ -64,7 +66,10 @@ class LoginActivity : AppCompatActivity() {
             email == validEmail && password == validPassword -> {
                 // Successful login
                 showToast("Login Successful!")
-                startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+
+                val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                intent.putExtra("EMAIL_USER", email)
+                startActivity(intent)
                 finish()
             }
             else -> {

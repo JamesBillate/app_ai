@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.text.isDigitsOnly
 import com.example.linkhaven.databinding.ActivityRegistrationBinding
 
 class RegistrationActivity : AppCompatActivity() {
@@ -15,6 +16,7 @@ class RegistrationActivity : AppCompatActivity() {
 
     private lateinit var etName: EditText
     private lateinit var etEmail: EditText
+    private lateinit var etPhone: EditText
     private lateinit var etPassword: EditText
     private lateinit var etConfirmPassword: EditText
     private lateinit var btnRegister: Button
@@ -27,6 +29,7 @@ class RegistrationActivity : AppCompatActivity() {
 
         etName = findViewById(R.id.etName)
         etEmail = findViewById(R.id.etEmail)
+        etPhone = findViewById(R.id.etPhone)
         etPassword = findViewById(R.id.etPassword)
         etConfirmPassword = findViewById(R.id.etConfirmPassword)
         btnRegister = findViewById(R.id.btnRegister)
@@ -47,19 +50,27 @@ class RegistrationActivity : AppCompatActivity() {
     private fun registerUser() {
         val name = etName.text.toString().trim()
         val email = etEmail.text.toString().trim()
+        val phone = etPhone.text.toString().trim()
         val password = etPassword.text.toString().trim()
         val confirmPassword = etConfirmPassword.text.toString().trim()
 
         // Validation
         when {
-            TextUtils.isEmpty(name) || TextUtils.isEmpty(email) || TextUtils.isEmpty(password) || TextUtils.isEmpty(confirmPassword) -> {
+            TextUtils.isEmpty(name) || TextUtils.isEmpty(email) || TextUtils.isEmpty(phone) || TextUtils.isEmpty(password) || TextUtils.isEmpty(confirmPassword) -> {
                 showToast("All fields are required!")
+                return
+            }
+            !Patterns.PHONE.matcher(phone).matches() -> {
+                showToast("Enter a valid phone number!")
+                return
             }
             !Patterns.EMAIL_ADDRESS.matcher(email).matches() -> {
                 showToast("Enter a valid email!")
+                return
             }
             password != confirmPassword -> {
                 showToast("Passwords do not match!")
+                return
             }
             else -> {
                 // Registration Success

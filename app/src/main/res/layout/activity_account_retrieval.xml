@@ -2,22 +2,57 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:gravity="center"
+    android:layout_marginBottom="50dp"
     android:padding="16dp">
+
+    <TextView
+        android:id="@+id/activityHeader"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="start"
+        android:text="Retrieve Account"
+        android:textColor="#333"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/etEmail"
-        android:layout_width="255dp"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
-        android:hint="Enter your email"/>
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textColor="#000000"
+        android:textColorHint="#888888"
+        android:textSize="16sp"
+        android:padding="15dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/side_strokes"
+        android:importantForAccessibility="yes"
+        tools:ignore="Autofill,HardcodedText"
+    />
 
     <Button
         android:id="@+id/btnSubmit"
-        android:layout_width="255dp"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="30dp"
+        android:padding="15dp"
+        android:backgroundTint="#330257"
         android:text="Submit"
-        android:layout_marginTop="20dp"
         />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="182dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/transparent"
+        android:textColor="#2b2b2b"
+        android:text="Back"/>
 
 </LinearLayout>
