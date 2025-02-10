@@ -1,6 +1,5 @@
 package com.example.linkhaven
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.linkhaven.databinding.ActivityMainBinding
@@ -13,18 +12,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.apply {
-            btnLogin.setOnClickListener {
-                startActivity(Intent(this@MainActivity, LoginActivity::class.java))
-            }
-
-            btnSignup.setOnClickListener {
-                startActivity(Intent(this@MainActivity, RegistrationActivity::class.java))
-            }
-
-            btnRetrieve.setOnClickListener {
-                startActivity(Intent(this@MainActivity, AccountRetrievalActivity::class.java))
-            }
-        }
+        // Display picture - set your picture in the ImageView
     }
 }

@@ -21,16 +21,16 @@ android:padding="16dp">
         android:text="Login" />
 
     <Button
-        android:id="@+id/btnSignup"
+        android:id="@+id/btnRegister"
         android:layout_width="255dp"
         android:layout_height="wrap_content"
-        android:text="Signup" />
+        android:text="Register" />
 
     <Button
         android:id="@+id/btnRetrieve"
-        android:layout_width="255dp"
+        android:layout_width="182dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Retrieve Account"/>
+        android:text="Retrieve Account" />
 
 </LinearLayout>

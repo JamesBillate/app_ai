@@ -15,7 +15,7 @@ class LoginActivity : AppCompatActivity() {
 
         binding.btnLogin.setOnClickListener {
             // Redirect to Main Screen
-            startActivity(Intent(this@LoginActivity, PictureActivity::class.java))
+            startActivity(Intent(this@LoginActivity, WelcomeActivity::class.java))
         }
     }
 }
