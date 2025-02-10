@@ -11,20 +11,32 @@
         android:id="@+id/etUsername"
         android:layout_width="255dp"
         android:layout_height="wrap_content"
-        android:hint="Username"/>
+        android:hint="Username"
+        tools:ignore="Autofill,HardcodedText"
+        />
 
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="255dp"
         android:layout_height="wrap_content"
         android:hint="Password"
-        android:inputType="textPassword"/>
+        android:inputType="textPassword"
+        tools:ignore="Autofill,HardcodedText"
+        />
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="255dp"
         android:layout_height="wrap_content"
         android:text="Login"
+        android:layout_marginTop="20dp"
+        />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="255dp"
+        android:layout_height="wrap_content"
+        android:text="Back"
         android:layout_marginTop="20dp"
         />
 
