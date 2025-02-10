@@ -5,13 +5,14 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.linkhaven.databinding.ActivityMainBinding
+import com.example.linkhaven.databinding.ActivityWelcomeBinding
 
 class WelcomeActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityWelcomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityWelcomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val btnLogin = findViewById<Button>(R.id.btnLogin)

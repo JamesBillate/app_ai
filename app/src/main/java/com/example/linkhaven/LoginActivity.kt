@@ -34,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
         binding.apply {
 
             btnLogin.setOnClickListener {
-                    loginUser()
+                loginUser()
             }
             btnBack.setOnClickListener {
                 startActivity(Intent(this@LoginActivity, WelcomeActivity::class.java))
@@ -63,8 +63,8 @@ class LoginActivity : AppCompatActivity() {
             email == validEmail && password == validPassword -> {
                 // Successful login
                 showToast("Login Successful!")
-                finish()
                 startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                finish()
             }
             else -> {
                 // Incorrect login
